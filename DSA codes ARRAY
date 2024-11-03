@@ -19,3 +19,146 @@ class Solution {
     }
     
 };// this is the best and possible way of solving the kandane algorithm:
+
+***Reverse a string:
+class Solution {
+  public:
+    string reverseString(string& s) {
+        string str=s;
+        int n=s.length();
+        for(int i=0;i<n/2;i++)
+        {
+            swap(str[i],str[n-i-1]);
+        }
+        return str;
+    }
+};
+
+***return the max and min element in array
+class Solution {
+public:
+    pair<long long, long long> getMinMax(vector<long long> arr) {
+        sort(arr.begin(), arr.end());
+        int n = arr.size();
+        
+        // Return the first and last element as a pair (min and max)
+        return {arr[0], arr[n - 1]};
+
+****return the kth smallest elemnet in array
+class Solution {
+  public:
+    // arr : given array
+    // k : find kth smallest element and return using this function
+    int kthSmallest(vector<int> &arr, int k) {
+    sort(arr.begin(),arr.end());
+    return arr[k-1];
+    }
+};
+
+***move negative element to one side of array
+public:
+    void segregateElements(vector<int>& arr) {
+       int n=arr.size();
+       int left=0;
+       int right=n-1;
+       while(left<=right)
+       {
+           if(arr[left]<0)
+           {
+               left++;
+           }
+           else if(arr[right]>=0)
+           {
+               right--;
+           }
+           else
+           {
+               swap(arr[left],arr[right]);
+               left++;
+               right--;
+           }
+       }
+***union of two arrays
+Here i can use set that will replace the dupilcate element and place only th elemeny that is good
+
+***cyclically rotae an array elemnt by one:
+
+class Solution {
+  public:
+    void rotate(vector<int> &arr) {
+       int n=arr.size();
+       for(int i=n-1;i>0;i--)
+       {
+           arr[i]=arr[i-1];
+       }
+       arr[0]=last;
+    }
+};
+
+***maximum sum or Knadane algorithm"
+class Solution {
+  public:
+    // Function to find the sum of contiguous subarray with maximum sum.
+    int maxSubarraySum(vector<int> &arr) {
+      int n=arr.size();
+      int sum=0;
+      int maxi=arr[0];
+      for(int i=0;i<n;i++)
+      {
+          sum+=arr[i];
+          maxi=max(maxi,sum);
+          if(sum<0)
+          {
+              sum=0;
+              
+          }
+      }
+      return maxi;
+      
+    
+};
+
+**minimize the heights:*****************
+class Solution {
+public:
+    int getMinDiff(vector<int>& arr, int n, int k) {
+        // Sort the array
+        sort(arr.begin(), arr.end());
+
+        // Initial difference between max and min heights without any changes
+        int minDiff = arr[n-1] - arr[0];
+        
+        // Variables to hold the new min and max heights after modification
+        int minHeight, maxHeight;
+        
+        // Check differences by adjusting each element in the array
+        for (int i = 1; i < n; ++i) {
+            // Avoid cases where subtraction leads to negative heights
+            if (arr[i] - k < 0) continue;
+            
+            // Calculate new possible min and max heights
+            minHeight = min(arr[0] + k, arr[i] - k); // Minimum height after adjustment
+            maxHeight = max(arr[i-1] + k, arr[n-1] - k); // Maximum height after adjustment
+            
+            // Update the minimum difference
+            minDiff = min(minDiff, maxHeight - minHeight);
+        }
+
+        return minDiff;
+    }
+};
+
+****Duplicate element for these problem u can use the concept of unordered_map and put the element inside it and use the method to get the element:
+
+***merger the two array without using extra space :
+
+class solution{
+vector<int>mergearray(vector<int>&a , vector<int>&b)
+{
+set<int>s;
+s.insert(a.begin(),a.end());
+s.insert(b.begin(),b.end());
+vector<int>res;
+res.insert(s.begin(),s.end());
+return res;
+}
