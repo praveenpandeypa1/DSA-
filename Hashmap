@@ -6,3 +6,31 @@
 **time complexity=O(1)
 **the key value pair and every value is associated with its key:
 **and fast insertion and deletion of element in array:
+
+
+** Problem of array using TWO-SUM in given code:
+** there are three approches:
+
+1 = using nested loops that will give the time complexity of O(n^2) and space complexity of O(1).
+2=  using hashmap here key value pair work one store data and other store its key value since it is optimal solution but t can be in more better ways:
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+       int n=nums.size();
+       unordered_map<int,int> mp;
+       for(int i=0;i<n;i++)
+       {
+        int complement=target-nums[i];
+        if(mp.find(complement)!=mp.end())
+        {
+            return {mp[complement],i};
+        }
+        mp[nums[i]]=i;//store the number:
+       }
+       return { };
+    }
+};
+
+3:== the last one aproch is finding the optimal solution:
+same is for that with time complexity O(N).
+
