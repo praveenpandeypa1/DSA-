@@ -162,3 +162,7 @@ vector<int>res;
 res.insert(s.begin(),s.end());
 return res;
 }
+
+
+**3 SUM and 4 SUM is pending:
+
