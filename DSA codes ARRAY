@@ -166,3 +166,38 @@ return res;
 
 **3 SUM and 4 SUM is pending:
 
+*** Merge two sorted array in DSA
+vector<int>mergeArrays(vector<int>& a, vector<int>& b) {
+        int n=a.size();
+        int m=b.size();
+        vector<int>merged;
+        int i=0,j=0;
+        while(i<n &&j<m)
+        {
+            if(a[i]<b[j])
+            {
+                mergerd.push_back(a[i]);
+                i++;
+            }
+            else
+            {
+                merged.push_back(b[j]);
+                j++;
+            }
+            
+        }
+        while(i<n)
+        {
+            merged.push_back(a[i]);
+            i++;
+        }
+        while(j<m)
+        {
+            merged.push_back(b[j]);
+        }
+       return mergerd; 
+    }
+
+this is the best and optimal solution for sorted array to merge them with time complexity of O(n+m). where n is size of array a and m is size of array b;
+
+
