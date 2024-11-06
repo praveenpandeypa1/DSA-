@@ -1,1 +1,8 @@
 //This file is about consisting the Hashmap: all the information about the hashmap:
+
+
+***Hasmap== It is basically used to pair the data with the key means it is used as key value pair in dsa, by using hash it is easy to retrive and insert and manipulate data in data structure:
+
+**time complexity=O(1)
+**the key value pair and every value is associated with its key:
+**and fast insertion and deletion of element in array:
