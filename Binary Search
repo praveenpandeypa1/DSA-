@@ -1,1 +1,30 @@
+**Binary Seacrh file that consist of searching algo for performing the searching operation in Array:
+**As Binary search is an efficient method for performin the search operation  with time complexity O(logn)
+
+
+//Find the missing and repeating element in DSA:
+ public:
+    vector<int> findTwoElement(vector<int>& arr) {
+        int n=arr.size();
+        sort(arr.begin(),arr.end());
+        unordered_map<int,int> mp;
+        for(int n:arr)
+        {
+            mp[n]++;
+        }
+        vector<int>res;
+        for(auto & const pair:mp)
+        {
+            if(mp.second>1)
+            {
+                res.push_back(pair.first);
+            }
+        }
+        int k=(n*(n+1))/2;
+        res.push_back(k);
+        return res;
+    }
+
+
+//find the element that occur majority of time:
 
