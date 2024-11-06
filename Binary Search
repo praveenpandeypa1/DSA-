@@ -28,3 +28,23 @@
 
 //find the element that occur majority of time:
 
+int majorityElement(vector<int>& arr) {
+        unoredred_map<int,int>mp;
+        int n=arr.size();
+        vector<int>res.
+        for(int num:arr)
+        {
+            mp[num]++;
+            
+        }
+        for(const auto &pair:mp)
+        {
+            if(pair.second>n/2)
+            {
+                res.push_back(pair.first);
+            }
+        }
+        return res;
+    }
+
+// And 
